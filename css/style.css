@@ -3,11 +3,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+    font-family: "Raleway", sans-serif;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
+  font-family: "Raleway", sans-serif; 
+   line-height: 1.6;
 }
 
 .container {
@@ -107,6 +108,7 @@ img {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  
 }
 
 .stock-btn {
@@ -127,4 +129,188 @@ img {
   background: #2e7d32;
   color: white;
   border-color: #2e7d32;
+}
+
+.chart-panel {
+  grid-column: 2;
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 10px;
+}
+
+.chart-header h2 {
+  margin: 0;
+  font-size: 20px;
+  color: #333;
+}
+
+.price-display {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.current-price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+}
+
+.price-change {
+  font-size: 14px;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.price-change.negative {
+  background: #ffebee;
+  color: #c62828;
+}
+
+#chart {
+  width: 100%;
+  height: auto;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.trading-controls {
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 6px;
+}
+
+.input-group {
+  margin-bottom: 10px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+.button-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.btn {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-buy {
+  background: #2e7d32;
+  color: white;
+}
+
+.btn-buy:hover {
+  background: #1b5e20;
+}
+
+.btn-sell {
+  background: #c62828;
+  color: white;
+}
+
+.btn-sell:hover {
+  background: #ad1457;
+}
+
+.positions-list {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.empty-msg {
+  text-align: center;
+  color: #999;
+  font-size: 12px;
+  padding: 15px;
+}
+
+.position-item {
+  background: #f5f5f5;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.position-info {
+  flex: 1;
+}
+
+.position-symbol {
+  font-weight: bold;
+  color: #333;
+}
+
+.position-details {
+  color: #666;
+  font-size: 10px;
+  margin-top: 2px;
+}
+
+.position-pnl {
+  font-weight: bold;
+  min-width: 70px;
+  text-align: right;
+}
+
+.position-pnl.positive {
+  color: #2e7d32;
+}
+
+.position-pnl.negative {
+  color: #c62828;
+}
+
+.close-btn {
+  background: #999;
+  color: white;
+  border: none;
+  padding: 5px 8px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 10px;
+  margin-left: 8px;
+}
+
+.close-btn:hover {
+  background: #666;
+}
+
+@media (max-width: 768px) {
+  .trading-wrapper {
+    grid-template-columns: 1fr;
+  }
 }
