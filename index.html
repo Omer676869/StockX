@@ -5,49 +5,104 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
     <link rel="stylesheet" href="css/style.css" />
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+</style>
   </head>
   <body>
     <header>
       <div class="container">
-        <h1>My Website</h1>
-        <nav>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </nav>
+        <div class="header__wrap">
+            <img src="images/logo.png" alt="">
+          <div class="logo"><h1>StockX</h1></div>
+          <div class="balance-header">Balance: <span id="headerBalance">$10,000.00</span></div>
+          <nav class="header__menu">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
       </div>
     </header>
 
     <main>
-      <section class="section" id="section1">
+      <section class="trading-section">
         <div class="container">
-          <h2>Section 1</h2>
-          <p>This is an example text for the first section.</p>
-          <img src="images/1.jpg" alt="Example image" />
-        </div>
-      </section>
+          <div class="trading-wrapper">
+            <!-- Left: Stock List -->
+            <div class="stocks-panel">
+              <h3>Stocks</h3>
+              <div id="stocksList" class="stocks-list"></div>
+            </div>
 
-      <section class="section" id="section2">
-        <div class="container">
-          <h2>Section 2</h2>
-          <p>Text for the second section.</p>
-        </div>
-      </section>
+            <!-- Middle: Chart -->
+            <div class="chart-panel">
+              <div class="chart-header">
+                <h2 id="chartTitle">AAPL</h2>
+                <div class="price-display">
+                  <span class="current-price" id="chartPrice">$150.00</span>
+                  <span class="price-change" id="priceChange">+0.00%</span>
+                </div>
+              </div>
+              <canvas id="chart" width="400" height="250"></canvas>
+              <div class="trading-controls">
+                <div class="input-group">
+                  <label>Shares</label>
+                  <input type="number" id="shares" min="1" value="1" />
+                </div>
+                <div class="button-group">
+                  <button class="btn btn-buy" id="buyBtn">BUY</button>
+                  <button class="btn btn-sell" id="sellBtn">SELL</button>
+                </div>
+              </div>
+            </div>
 
-      <section class="section" id="section3">
-        <div class="container">
-          <h2>Section 3</h2>
-          <p>Text for the third section.</p>
+            <!-- Right: Positions -->
+            <div class="positions-panel">
+              <h3>Positions</h3>
+              <div id="positionsList" class="positions-list">
+                <p class="empty-msg">No positions</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
 
     <footer>
       <div class="container">
+        <div class="footer__wrap">
+          <div class="footer__logo">
+            <img src="imgs/logo-design.png" alt="" />
+            <p>Lorem, ipsum.</p>
+          </div>
+          <div class="footer__menu">
+            <div class="footer_up">
+              <nav class="footer__menu">
+              </nav>
+            </div>
+            <div class="footer_mid">
+              <div class="item">Email: qwe@qwe.qwe</div>
+              <div class="item">Phone: 123123123</div>
+              <div class="item">
+                <span>Follow us: </span>
+                <div class="social">
+                  <img src="imgs/instagram.png" alt="" />
+                  <img src="imgs/whatsapp.png" alt="" />
+                </div>
+              </div>
+            </div>
+            <div class="footer_down">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, corporis!</p>
+            </div>
+          </div>
+        </div>
         <p>© 2025 My Website. All rights reserved.</p>
       </div>
     </footer>
+
+    <script src="js/trading.js"></script>
   </body>
 </html>
