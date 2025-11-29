@@ -17,6 +17,32 @@ body {
   margin: 0 auto;
 }
 
+.firstAD {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../images/ad.jpg") no-repeat center/cover;
+    text-align: center;
+    padding: 20px;
+}
+
+.firstAD h1 {
+    color: white;
+    font-size: 80px;
+    margin-bottom: 20px;
+}
+
+.firstAD p {
+    color: white;
+    font-weight: 500;
+    font-size: 20px;
+    max-width: 800px;
+    line-height: 1.5;
+}
+
 /* Header */
 header {
   background: #000000;
