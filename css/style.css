@@ -1,14 +1,15 @@
-/* Reset default styles */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-    font-family: "Raleway", sans-serif;
+  font-family: "Manrope", sans-serif;
 }
 
 body {
-  font-family: "Raleway", sans-serif; 
-   line-height: 1.6;
+  font-family: "Manrope", sans-serif;
+     line-height: 1.6;
 }
 
 .container {
@@ -344,4 +345,55 @@ img {
   .trading-wrapper {
     grid-template-columns: 1fr;
   }
+}
+
+.blocks{
+  display: flex;
+  padding: 20px;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.blocksplace {
+  padding: 40px 0;
+}
+
+.blocksplace__warp {
+  display: flex;
+  padding: 20px;
+  gap: 20px;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.blocksplace__item {
+  background-color: #ffffff;
+  width: 300px;
+  min-height: 400px;
+  border: 1px solid black;
+  border-radius: 5px;
+  text-align: center;
+  padding-top: 40px;
+}
+
+.blocksplace__item button {
+  margin-top: 20px;
+  background-color: black;
+  color: white;
+  width: 150px;
+  border: none;
+  height: 40px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.blocksplace__item p {
+  margin-top: 20px;
+  padding: 5px;
+}
+
+.blocksplace__item button:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease-out;
 }
