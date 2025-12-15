@@ -6,7 +6,6 @@
     <title>Home</title>
     <link rel="stylesheet" href="css/style.css" />
     <style>  
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 </style>
   </head>
   <body>
@@ -28,43 +27,76 @@
 
     <main>
       
-      <div class="firstAD">
-        <h1>Stocks - Trading Simulation</h1>
-        <p>At Stocks, We offer The Best Trading Simulation!</p>
-    </div>
+      <section class="hero-section">
+        <div class="particles" id="particles"></div>
+        <div class="container">
+          <div class="hero__wrap">
+            <div class="hero__content">
+              <h1>Stocks</h1>
+              <p>Trading Simulation</p>
+              <a href="#trading-section" class="hero__cta">Start Trading</a>
+            </div>
+            <div class="hero__chart">
+              <svg viewBox="0 0 500 300" class="chart-svg">
+                <line class="grid-line" x1="0" y1="60" x2="500" y2="60"/>
+                <line class="grid-line" x1="0" y1="120" x2="500" y2="120"/>
+                <line class="grid-line" x1="0" y1="180" x2="500" y2="180"/>
+                <line class="grid-line" x1="0" y1="240" x2="500" y2="240"/>
+                <polyline class="chart-line" points="50,240 100,200 150,220 200,160 250,180 300,120 350,140 400,80 450,100"/>
+                <circle class="chart-dot" cx="50" cy="240"/>
+                <circle class="chart-dot" cx="100" cy="200"/>
+                <circle class="chart-dot" cx="150" cy="220"/>
+                <circle class="chart-dot" cx="200" cy="160"/>
+                <circle class="chart-dot" cx="250" cy="180"/>
+                <circle class="chart-dot" cx="300" cy="120"/>
+                <circle class="chart-dot" cx="350" cy="140"/>
+                <circle class="chart-dot" cx="400" cy="80"/>
+                <circle class="chart-dot" cx="450" cy="100"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
       
       <section class="trading-section">
         <div class="container">
           <div class="trading-wrapper">
-            <div class="stocks-panel">
-              <h3>Stocks</h3>
-              <div id="stocksList" class="stocks-list"></div>
-            </div>
-            <div class="chart-panel">
+            <div class="chart-main">
               <div class="chart-header">
-                <h2 id="chartTitle">AAPL</h2>
-                <div class="price-display">
-                  <span class="current-price" id="chartPrice">$150.00</span>
-                  <span class="price-change" id="priceChange">+0.00%</span>
+                <div class="chart-title-group">
+                  <h2 id="chartTitle">AAPL</h2>
+                  <div class="price-info">
+                    <span class="current-price" id="chartPrice">$150.00</span>
+                    <span class="price-change" id="priceChange">+0.00%</span>
+                  </div>
                 </div>
               </div>
-              <canvas id="chart" width="400" height="250"></canvas>
-              <div class="trading-controls">
-                <div class="input-group">
-                  <label>Shares</label>
-                  <input type="number" id="shares" min="1" value="1" />
-                </div>
-                <div class="button-group">
+              <div class="chart-container">
+                <canvas id="chart" width="800" height="400"></canvas>
+              </div>
+              <div class="stocks-selector">
+                <div id="stocksList" class="stocks-list"></div>
+              </div>
+            </div>
+
+            <div class="trading-sidebar">
+              <div class="trading-panel">
+                <h3>Trade</h3>
+                <div class="trading-form">
+                  <div class="form-group">
+                    <label>Quantity</label>
+                    <input type="number" id="shares" min="1" value="1" />
+                  </div>
                   <button class="btn btn-buy" id="buyBtn">BUY</button>
                   <button class="btn btn-sell" id="sellBtn">SELL</button>
                 </div>
               </div>
-            </div>
 
-            <div class="positions-panel">
-              <h3>Positions</h3>
-              <div id="positionsList" class="positions-list">
-                <p class="empty-msg">No positions</p>
+              <div class="positions-panel">
+                <h3>Positions</h3>
+                <div id="positionsList" class="positions-list">
+                  <p class="empty-msg">No positions</p>
+                </div>
               </div>
             </div>
           </div>
@@ -78,37 +110,112 @@
               <img src="images/apple.png" width="80px" height="50px">
               <h1>Apple Stock</h1>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo quas officia quam repr</p>
-              <button>Trade</button>
+              <div class="blocksplace__footer">
+                <span class="blocksplace__date" id="date1"></span>
+                <div class="blocksplace__actions">
+                  <button class="blocksplace__heart" onclick="this.classList.toggle('active')">♥</button>
+                  <a href="#" class="blocksplace__trade">Trade</a>
+                </div>
+              </div>
             </div>
             <div class="blocksplace__item">
               <img src="images/microsoft.png" width="80px" height="50px">
               <h1>Microsoft Stock</h1>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo quas officia quam repr</p>
-              <button>Trade</button>
+              <div class="blocksplace__footer">
+                <span class="blocksplace__date" id="date2"></span>
+                <div class="blocksplace__actions">
+                  <button class="blocksplace__heart" onclick="this.classList.toggle('active')">♥</button>
+                  <a href="#" class="blocksplace__trade">Trade</a>
+                </div>
+              </div>
             </div>
             <div class="blocksplace__item">
               <img src="images/google.png" width="80px" height="50px">
               <h1>Google Stock</h1>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo quas officia quam repr</p>
-              <button>Trade</button>
+              <div class="blocksplace__footer">
+                <span class="blocksplace__date" id="date3"></span>
+                <div class="blocksplace__actions">
+                  <button class="blocksplace__heart" onclick="this.classList.toggle('active')">♥</button>
+                  <a href="#" class="blocksplace__trade">Trade</a>
+                </div>
+              </div>
             </div>
             <div class="blocksplace__item">
               <img src="images/tesla.png" width="80px" height="50px">
               <h1>Tesla Stock</h1>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo quas officia quam repr</p>
-              <button>Trade</button>
+              <div class="blocksplace__footer">
+                <span class="blocksplace__date" id="date4"></span>
+                <div class="blocksplace__actions">
+                  <button class="blocksplace__heart" onclick="this.classList.toggle('active')">♥</button>
+                  <a href="#" class="blocksplace__trade">Trade</a>
+                </div>
+              </div>
             </div>
             <div class="blocksplace__item">
               <img src="images/nasdaq.png" width="80px" height="50px">
               <h1>NASDAQ</h1>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo quas officia quam repr</p>
-              <button>Trade</button>
+              <div class="blocksplace__footer">
+                <span class="blocksplace__date" id="date5"></span>
+                <div class="blocksplace__actions">
+                  <button class="blocksplace__heart" onclick="this.classList.toggle('active')">♥</button>
+                  <a href="#" class="blocksplace__trade">Trade</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="services">
+        <div class="container">
+          <div class="services__warp">
+            <div class="services__item">
+              <img src="images/analysis.png" alt="" width="60px">
+              <h1>REAL-TIME ANALYTICS</h1>
+              <p>Track market trends and analyze stock performance with advanced charting tools and indicators.</p>
+            </div>
+            <div class="services__item">
+              <img src="images/portfolio.png" alt="" width="60px">
+              <h1>PORTFOLIO MANAGEMENT</h1>
+              <p>Manage your investments efficiently with portfolio tracking and performance analytics.</p>
+            </div>
+            <div class="services__item">
+              <img src="images/education.png" alt="" width="60px">
+              <h1>TRADING EDUCATION</h1>
+              <p>Learn trading strategies and market fundamentals with our comprehensive educational resources.</p>
+            </div>
+            <div class="services__item">
+              <img src="images/alerts.png" alt="" width="60px">
+              <h1>PRICE ALERTS</h1>
+              <p>Get instant notifications when stocks reach your target prices and market conditions change.</p>
+            </div>
+            <div class="services__item">
+              <img src="images/support.png" alt="" width="60px">
+              <h1>24/7 SUPPORT</h1>
+              <p>Access our dedicated support team anytime to help with your trading questions and issues.</p>
+            </div>
+            <div class="services__item">
+              <img src="images/practice.png" alt="" width="60px">
+              <h1>PRACTICE TRADING</h1>
+              <p>Open an account and practice trading with demo money. No real money is at risk.</p>
             </div>
           </div>
         </div>
       </section>
     </div>
     </main>
+
+    <script>
+      const today = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+      for (let i = 1; i <= 5; i++) {
+        const dateEl = document.getElementById('date' + i);
+        if (dateEl) dateEl.textContent = today;
+      }
+    </script>
 
 <footer>
       <div class="container">
@@ -128,9 +235,9 @@
               <div class="item">
                 <span>Follow us: </span>
                 <div class="social">
-                  <img src="images/instagram.png" alt="" width="40px">
-                  <img src="images/facebook.png" alt="" width="40px">
-                  <img src="images/telegram.png" alt="" width="40px">
+                  <a href="https://instagram.com" target="_blank"><img src="images/instagram.png" alt="Instagram"></a>
+                  <a href="https://facebook.com" target="_blank"><img src="images/facebook.png" alt="Facebook"></a>
+                  <a href="https://telegram.org" target="_blank"><img src="images/telegram.png" alt="Telegram"></a>
                 </div>
               </div>
             </div>
@@ -144,5 +251,28 @@
     </footer>
 
     <script src="js/trading.js"></script>
+    <script>
+      function createParticles() {
+        const container = document.getElementById('particles');
+        const particleCount = 30;
+        
+        for (let i = 0; i < particleCount; i++) {
+          const particle = document.createElement('div');
+          particle.className = 'particle';
+          const x = Math.random() * 100;
+          const y = Math.random() * 100;
+          const duration = 3 + Math.random() * 4;
+          const delay = Math.random() * 2;
+          
+          particle.style.left = x + '%';
+          particle.style.top = y + '%';
+          particle.style.animation = `float ${duration}s linear ${delay}s infinite`;
+          
+          container.appendChild(particle);
+        }
+      }
+      
+      createParticles();
+    </script>
   </body>
 </html>
