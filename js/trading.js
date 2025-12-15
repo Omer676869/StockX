@@ -1,5 +1,5 @@
-let stocks = {AAPL:{p:150,h:[150]},MSFT:{p:380,h:[380]},GOOGL:{p:140,h:[140]},TSLA:{p:250,h:[250]}};
-let pos = [], cash = 10000, sel = 'AAPL';
+let stocks = {AAPL:{p:150,h:[150]},MSFT:{p:380,h:[380]},GOOGL:{p:140,h:[140]},TSLA:{p:250,h:[250]},NDAQ:{p:23500,h:[23500]}};
+let pos = [], cash = 100000, sel = 'AAPL';
 
 function draw(){
   let c=document.getElementById('chart'),x=c.getContext('2d'),h=stocks[sel].h;
@@ -35,4 +35,4 @@ document.querySelector('.stock-btn').classList.add('active');
 document.getElementById('buyBtn').onclick=()=>{let s=parseInt(document.getElementById('shares').value),c=stocks[sel].p*s;if(cash>=c){cash-=c;pos.push({t:sel,s,e:stocks[sel].p,c});upd();}};
 document.getElementById('sellBtn').onclick=()=>{if(pos.length){let p=pos.pop();cash+=p.s*stocks[p.t].p;}upd();};
 
-setInterval(upd,2000);upd();
+setInterval(upd,600);upd();
