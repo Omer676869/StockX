@@ -583,7 +583,7 @@ img {
 }
 
 .position-item {
-  background: rgba(255,255,255,0.05);
+  background: #fff;
   padding: 12px;
   border-radius: 8px;
   margin-bottom: 10px;
@@ -596,7 +596,7 @@ img {
 }
 
 .position-item:hover {
-  background: rgba(255,255,255,0.08);
+  background: #fff;
   border-color: rgba(74, 222, 128, 0.2);
 }
 
