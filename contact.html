@@ -5,11 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact</title>
     <link rel="stylesheet" href="css/style.css" />
+    <style>
+      body {
+          background-color: #f8f9fa;
+          font-family: sans-serif;
+          direction: rtl;
+      }
+      form {
+          background-color: #fff;
+          padding: 40px;
+          width: 500px;
+          margin: 50px auto;
+          border: 2px solid #000;
+          text-align: right;
+      }
+      input, textarea {
+          width: 100%;
+          padding: 12px;
+          margin-bottom: 20px;
+          border: 1px solid #000;
+          box-sizing: border-box;
+          font-size: 16px;
+          display: block;
+      }
+      button {
+          width: 100%;
+          padding: 15px;
+          background: #000;
+          color: #fff;
+          border: none;
+          cursor: pointer;
+          font-size: 18px;
+          font-weight: bold;
+      }
+      button:hover {
+          background: #333;
+      }
+    </style>
   </head>
   <body>
     <header>
       <div class="container">
-        <h1>My Website</h1>
+        <h1>Stock X Contact</h1>
         <nav>
           <ul>
             <li><a href="index.html">Home</a></li>
@@ -23,10 +60,60 @@
     <main>
       <div class="container">
         <h2>Contact</h2>
-        <p>Email: example@mail.com</p>
-        <p>Phone: +1 123-456-7890</p>
+        <form id="myForm">
+          <input type="text" id="username" name="username" placeholder="שם משתמש">
+          <input type="email" id="email" name="email" placeholder="אימייל">
+          <input type="text" id="phone" name="phone" placeholder="מספר טלפון">
+          <input type="text" id="subject" name="subject" placeholder="נושא ההודעה">
+          <textarea id="message" name="message" placeholder="הודעה" rows="4"></textarea>
+          <button type="submit">שלח</button>
+        </form>
+        <p>Email: omertech1230@gmail.com</p>
+        <p>Phone: +972522032882</p>
       </div>
     </main>
+
+    <script>
+      const form = document.getElementById("myForm");
+      form.addEventListener("submit", function(e) {
+          e.preventDefault();
+          
+          const username = document.getElementById("username").value;
+          const email = document.getElementById("email").value;
+          const phone = document.getElementById("phone").value;
+          const subject = document.getElementById("subject").value;
+          const message = document.getElementById("message").value;
+
+          if (username.length < 5) {
+              alert("שם המשתמש חייב להיות לפחות 5 תווים");
+              return;
+          }
+
+          const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailPattern.test(email)) {
+              alert("כתובת אימייל לא חוקית");
+              return;
+          }
+
+          if (phone.length < 10) {
+              alert("מספר טלפון לא טוב");
+              return;
+          }
+
+          if (subject.length < 3) {
+              alert("נא לכתוב נושא");
+              return;
+          }
+
+          if (message.length < 10) {
+              alert("ההודעה צריכה להיות לפחות 10 אותיות");
+              return;
+          }
+
+          alert("Data was send");
+      });
+    </script>
+
 
     <footer>
       <div class="container">
