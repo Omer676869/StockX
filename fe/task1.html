@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    div{
+        margin-top: 15px;
+    }
+
+    hr{
+       margin-top: 20px;
+       margin-bottom: 20px;
+    }
+
+    .green{
+        color: green;
+    }
+
+    button{
+        margin-right: 10px;
+    }
+
+    .red{color: red;}
+    .blue{color: blue;}
+    .green{color: green;}
+</style>
+<body>
+
+    <h1 id="title">My Website</h1>
+    <button onclick="Hide()">To Hide</button>
+    <button onclick="Show()">To Show</button>
+
+    <hr>
+
+    <h1 id="ChangeMe" onclick="Click()">Click Me</h1>
+
+    <hr>
+
+    <h1 id="ToggleTitle">Display with Toggle</h1>
+    <button onclick="Toggle()" id="ToggleButton">Hide</button>
+
+    <hr>
+
+    <h1 id="HoverMeTitle" onmouseenter="HoverColor()" onmouseout="RemoveHover()">Hover me to Change color</h1>
+
+    <hr>
+    <div class="para" id="para">
+    <p>Hello my name is Omer</p>
+    <p>Hello my name is Omer</p>
+    <p>Hello my name is Omer</p>
+        <button id="MakeRed" onclick="ChangeColor('red')">Make Red</button><button id="MakeBlue" onclick="ChangeColor('blue')">Make Blue</button><button id="MakeGreen" onclick="ChangeColor('green')">Make Green</button>
+    </div>
+
+    <hr>
+
+
+<script>
+let h1 = document.getElementById("title");
+
+function Hide(){
+    h1.style.display = "none";
+}
+
+function Show(){
+    h1.style.display = "block";
+}
+
+function Click(){
+    let ChangeMeTitle = document.getElementById("ChangeMe");
+    ChangeMeTitle.innerText = "Other Text";
+}
+
+function Toggle(){
+    let ToggleTitle = document.getElementById("ToggleTitle");
+    let ToggleButton = document.getElementById("ToggleButton");
+    
+    if (ToggleTitle.style.display === "block"){
+        ToggleTitle.style.display = "none";
+        ToggleButton.innerText = "Show";
+    }
+    else{
+        ToggleTitle.style.display = "block";
+        ToggleButton.innerText = "Hide";
+    }
+}
+
+let HoverMeTitle = document.getElementById("HoverMeTitle");
+const originalText = HoverMeTitle.textContent;
+
+
+function HoverColor(){
+    HoverMeTitle.style.color = "red";
+    HoverMeTitle.textContent = "Hovering!";
+    
+}
+
+function RemoveHover(){
+    HoverMeTitle.style.color = "black";
+    HoverMeTitle.textContent = originalText;
+}
+
+
+function ChangeColor(color) {
+    let paragraphs = document.getElementById("para")
+    paragraphs.className = color;
+}
+
+</script>
+</body>
+</html>

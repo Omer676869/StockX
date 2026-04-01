@@ -1,0 +1,17 @@
+{
+  "name": "stock-x",
+  "version": "1.0.0",
+  "description": "stock-x",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "omer marom",
+  "license": "MIT",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
